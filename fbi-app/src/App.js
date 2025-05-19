@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import MostWantedPage from './pages/MostWantedPage';
 import CrimesByCategoryPage from './pages/CrimesByCategoryPage';
-import NewsAlertsPage from './pages/NewsAlertsPage';
+import NewsAlertsPage from './pages/NewsAlertsPage'; // Importa NewsAlertsPage
 import StatisticsPage from './pages/StatisticsPage';
 import FavoritesPage from './pages/FavoritesPage';
 import SettingsPage from './pages/SettingsPage';
@@ -22,7 +22,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/most-wanted" element={<MostWantedPage />} />
           <Route path="/crimes" element={<CrimesByCategoryPage />} />
-          <Route path="/news-alerts" element={<NewsAlertsPage />} />
+          <Route path="/news-alerts" element={<NewsAlertsPage />} /> {/* Agrega esta ruta */}
           <Route path="/statistics" element={<StatisticsPage />} />
           <Route path="/favorites" element={<FavoritesPage />} />
           <Route path="/settings" element={<SettingsPage />} />
