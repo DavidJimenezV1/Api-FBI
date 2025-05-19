@@ -3,40 +3,25 @@ import useFetch from '../hooks/useFetch';
 import Loading from '../components/Loading/Loading';
 import Card from '../components/Card/Card';
 import Search from '../components/Search/Search';
-import Filter from '../components/Filter/Filter';
 
-const MostWantedPage = () => {
-  const apiUrl = 'https://api.fbi.gov/wanted/v1/list';
+const FugitivesPage = () => {
+  const apiUrl = 'https://api.fbi.gov/wanted/v1/list'; // Reemplaza con la URL correcta
   const { data, loading, error } = useFetch(apiUrl);
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
-  const [filters, setFilters] = useState({});
-  const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
     if (data) {
-      let filtered = [...data];
-
-      // Aplica los filtros
-      for (const key in filters) {
-        if (filters[key]) {
-          filtered = filtered.filter(item =>
-            item[key] && String(item[key]).toLowerCase() === filters[key].toLowerCase()
-          );
-        }
-      }
-      setFilteredData(filtered);
-    } else {
-      setFilteredData([]);
+      const filtered = data.filter(item =>
+        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.description.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setSearchResults(filtered);
     }
-  }, [data, filters]);
+  }, [data, searchTerm]);
 
   const handleSearch = (term) => {
     setSearchTerm(term);
-  };
-
-  const handleFilterChange = (newFilters) => {
-    setFilters({ ...filters, ...newFilters });
   };
 
   if (loading) {
@@ -49,9 +34,8 @@ const MostWantedPage = () => {
 
   return (
     <div>
-      <h1>Más Buscados del FBI</h1>
+      <h1>Fugitivos del FBI</h1>
       <Search onSearch={handleSearch} />
-      <Filter onFilterChange={handleFilterChange} filters={filters} />
       {searchTerm ? (
         searchResults.map(item => <Card key={item.uid} item={item} />)
       ) : (
@@ -61,4 +45,4 @@ const MostWantedPage = () => {
   );
 };
 
-export default MostWantedPage;
+export default FugitivesPage;

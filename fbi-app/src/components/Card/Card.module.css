@@ -1,0 +1,42 @@
+.card {
+  /* Tus estilos de tarjeta existentes */
+  position: relative; /* Agregado para posicionar el botón absolutamente */
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.favoriteButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent; /* Hace el fondo transparente */
+  border: none; /* Elimina el borde del botón */
+  cursor: pointer;
+  padding: 0; /* Elimina el relleno predeterminado del botón */
+}
+
+.favoriteButton:hover {
+  /* Estilos para cuando el mouse pasa por encima del botón */
+  opacity: 0.7; /* Reduce la opacidad para indicar la interactividad */
+}
+
+
+.cardImage {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.cardTitle {
+  font-size: 1.2em;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.cardDetails {
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: 10px;
+}
