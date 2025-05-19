@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import useFetch from '../hooks/useFetch';
-import Loading from '../components/Loading/Loading'; // Importación corregida
-import Card from '../components/Card/Card';     // Importación corregida
-import Search from '../components/Search/Search';   // Importación corregida
-import Filter from '../components/Filter/Filter';   // Importación corregida
+import Loading from '../components/Loading/Loading'; // Importación corregida: sin llaves
+import Card from '../components/Card/Card';     // Importación corregida: sin llaves
+import Search from '../components/Search/Search';   // Importación corregida: sin llaves
+import Filter from '../components/Filter/Filter';   // Importación corregida: sin llaves
 
 const MostWantedPage = () => {
   const apiUrl = 'https://api.fbi.gov/wanted/v1/list';

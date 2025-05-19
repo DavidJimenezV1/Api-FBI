@@ -7,9 +7,9 @@ import NewsAlertsPage from './pages/NewsAlertsPage';
 import StatisticsPage from './pages/StatisticsPage';
 import FavoritesPage from './pages/FavoritesPage';
 import SettingsPage from './pages/SettingsPage';
-import NavBar from './components/NavBar/NavBar';
-import Footer from './components/Footer/Footer';
-import Header from './components/Header/Header';
+import NavBar from './components/NavBar/NavBar'; // Importación corregida: sin llaves
+import Footer from './components/Footer/Footer'; // Importación corregida: sin llaves
+import Header from './components/Header/Header'; // Importación corregida: sin llaves
 
 function App() {
   return (

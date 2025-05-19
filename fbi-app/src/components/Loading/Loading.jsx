@@ -5,4 +5,4 @@ const Loading = () => {
   return <div className={styles.loading}>Cargando...</div>;
 };
 
-export default Loading;
+export default Loading; // ✅ Correcto

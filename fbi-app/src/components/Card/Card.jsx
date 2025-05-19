@@ -9,9 +9,9 @@ const Card = ({ item }) => {
       )}
       <h3 className={styles.cardTitle}>{item.title}</h3>
       <p className={styles.cardDetails}>{item.description}</p>
-      {/* Puedes agregar más información del 'item' aquí */}
+      {/* Agrega más información que quieras mostrar de cada fugitivo */}
     </div>
   );
 };
 
-export default Card;
+export default Card; // ✅ Correcto
