@@ -1,0 +1,19 @@
+.filterContainer {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.filterLabel {
+  display: flex;
+  align-items: center;
+}
+
+.filterSelect {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  margin-left: 10px;
+}
