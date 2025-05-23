@@ -1,38 +1,64 @@
+/* src/App.css */
+
+/* Variables para el Tema Claro (por defecto) */
+:root {
+  --background-color: #f0f2f5;
+  --text-color: #333;
+  --header-background: #f0f0f0; /* Color original del header */
+  --header-text-color: #333; /* Color original del texto del header */
+  --navbar-background: #333; /* Color original de la navbar */
+  --navbar-text-color: white; /* Color original del texto de la navbar */
+  --navbar-hover-color: #ddd; /* Color original del hover de la navbar */
+  --card-background: #fff;
+  --card-border: #ccc;
+  --card-text-color: #555; /* Color de texto de los detalles de la tarjeta */
+  --link-color: #007bff; /* Si tienes enlaces en el contenido principal que quieres tematizar */
+  --footer-background: #343a40; /* Un color de footer genérico si lo tienes */
+  --footer-text-color: #fff;
+}
+
+/* Variables para el Tema Oscuro */
+body.dark-mode {
+  --background-color: #282c34; /* Fondo oscuro */
+  --text-color: #f0f0f0; /* Texto claro */
+  --header-background: #1a1a1a; /* Header más oscuro */
+  --header-text-color: #e0e0e0; /* Texto del header más claro */
+  --navbar-background: #1e1e1e; /* Navbar más oscura */
+  --navbar-text-color: #b0b0b0; /* Texto de la navbar más claro */
+  --navbar-hover-color: #888; /* Hover de la navbar en oscuro */
+  --card-background: #333; /* Fondo de tarjeta oscuro */
+  --card-border: #555; /* Borde de tarjeta oscuro */
+  --card-text-color: #ccc; /* Texto de detalles de tarjeta claro */
+  --link-color: #90caf9; /* Enlaces en modo oscuro */
+  --footer-background: #121212;
+  --footer-text-color: #e0e0e0;
+}
+
+/* Estilos globales que usarán las variables */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave para el cambio de tema */
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-content {
+  flex-grow: 1;
+  padding: 20px;
 }

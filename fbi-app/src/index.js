@@ -1,22 +1,23 @@
+// src/index.js
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css'; // Asegúrate de que este archivo exista
+import './index.css'; // Tu CSS general de React
+import './App.css';   // ¡Importa también App.css donde definiste tus variables CSS!
 import App from './App';
-import reportWebVitals from './reportWebVitals'; // Asegúrate de que este archivo exista
+import reportWebVitals from './reportWebVitals';
+import { ThemeProvider } from './context/ThemeContext'; // <-- ¡IMPORTANTE: Importa el ThemeProvider!
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    {/* ¡IMPORTANTE: Envuelve tu componente App con ThemeProvider! */}
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>
 );
 
-// O, si no estás usando StrictMode, prueba con:
-// root.render(
-//   <App />
-// );
-
-// Si quieres medir el rendimiento de tu aplicación, pasa una función
-// para registrar los resultados (por ejemplo, reportWebVitals(console.log))
-// o envíalos a un punto final de análisis. Más información: https://bit.ly/CRA-vitals
+// Si quieres empezar a medir el rendimiento en tu aplicación, pasa una función
+// para registrar resultados (por ejemplo: reportWebVitals(console.log))
+// o enviarlo a un punto final de análisis. Aprende más: https://bit.ly/CRA-vitals
 reportWebVitals();

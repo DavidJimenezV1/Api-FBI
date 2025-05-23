@@ -1,26 +1,28 @@
+/* Card.module.css */
 .card {
-  /* Tus estilos de tarjeta existentes */
-  position: relative; /* Agregado para posicionar el botón absolutamente */
-  border: 1px solid #ccc;
+  position: relative;
+  border: 1px solid var(--card-border); /* USAR VARIABLE */
+  background-color: var(--card-background); /* AÑADIR BACKGROUND PARA TEMATIZAR */
   padding: 10px;
   margin-bottom: 20px;
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Transición suave */
 }
 
 .favoriteButton {
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: transparent; /* Hace el fondo transparente */
-  border: none; /* Elimina el borde del botón */
+  background-color: transparent;
+  border: none;
   cursor: pointer;
-  padding: 0; /* Elimina el relleno predeterminado del botón */
+  padding: 0;
+  color: var(--text-color); /* Para que el icono del botón cambie de color con el tema */
+  transition: color 0.3s ease;
 }
 
 .favoriteButton:hover {
-  /* Estilos para cuando el mouse pasa por encima del botón */
-  opacity: 0.7; /* Reduce la opacidad para indicar la interactividad */
+  opacity: 0.7;
 }
-
 
 .cardImage {
   width: 100%;
@@ -33,10 +35,11 @@
   font-size: 1.2em;
   margin-top: 10px;
   margin-bottom: 5px;
+  color: var(--text-color); /* Para que el título cambie de color */
 }
 
 .cardDetails {
   font-size: 0.9em;
-  color: #555;
+  color: var(--card-text-color); /* USAR VARIABLE */
   margin-bottom: 10px;
 }

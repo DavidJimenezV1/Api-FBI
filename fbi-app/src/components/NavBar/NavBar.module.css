@@ -1,17 +1,18 @@
+/* NavBar.module.css */
 .navBar {
-  background-color: #333;
-  color: white;
+  background-color: var(--navbar-background); /* USAR VARIABLE */
+  color: var(--navbar-text-color); /* USAR VARIABLE */
   padding: 10px;
   display: flex;
   justify-content: space-around;
 }
 
 .navItem {
-  color: white;
+  color: var(--navbar-text-color); /* USAR VARIABLE */
   text-decoration: none;
   margin: 0 10px;
 }
 
 .navItem:hover {
-  color: #ddd;
+  color: var(--navbar-hover-color); /* USAR VARIABLE */
 }
