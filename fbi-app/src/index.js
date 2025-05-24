@@ -1,23 +1,25 @@
 // src/index.js
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css'; // Tu CSS general de React
-import './App.css';   // ¡Importa también App.css donde definiste tus variables CSS!
+import './index.css';   // Importa tu CSS global (donde se definen las variables del tema)
+import './App.css';     // Asegúrate de importar App.css si también contiene estilos globales o variables.
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { ThemeProvider } from './context/ThemeContext'; // <-- ¡IMPORTANTE: Importa el ThemeProvider!
+import { AuthProvider } from './context/AuthContext';   // Importa tu AuthProvider
+import { ThemeProvider } from './context/ThemeContext'; // Importa tu ThemeProvider
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* ¡IMPORTANTE: Envuelve tu componente App con ThemeProvider! */}
+    {/* ThemeProvider DEBE envolver a todos los componentes que necesitan el tema,
+        incluyendo AuthProvider y App. Esto asegura que el contexto del tema
+        esté disponible para toda la jerarquía de componentes. */}
     <ThemeProvider>
-      <App />
+      <AuthProvider>
+        <App />
+      </AuthProvider>
     </ThemeProvider>
   </React.StrictMode>
 );
 
-// Si quieres empezar a medir el rendimiento en tu aplicación, pasa una función
-// para registrar resultados (por ejemplo: reportWebVitals(console.log))
-// o enviarlo a un punto final de análisis. Aprende más: https://bit.ly/CRA-vitals
 reportWebVitals();

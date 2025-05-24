@@ -1,29 +1,36 @@
-/* Header.module.css */
+/* src/components/Header/Header.module.css */
 .header {
-  background-color: var(--header-background); /* USAR VARIABLE */
+  background-color: var(--header-background); /* Usa la variable del tema */
+  color: var(--header-text-color);           /* Usa la variable del tema */
   padding: 20px;
   text-align: center;
-  display: flex; /* Añadido para alinear el título y el botón */
-  justify-content: space-between; /* Para separar el título del botón */
-  align-items: center; /* Para centrar verticalmente */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
 }
 
-.header h1 {
+.logo h1 { /* Renombrado de .header h1 a .logo h1 si el h1 está dentro de .logo */
   font-size: 24px;
-  color: var(--header-text-color); /* USAR VARIABLE */
+  color: var(--header-text-color); /* Asegura que el título también se tematice */
+  margin: 0; /* Elimina márgenes por defecto si los tiene */
 }
 
-/* ¡Añade estos estilos para el botón de cambio de tema! */
+/* Estilos para el botón de cambio de tema */
 .themeToggle {
-  background-color: transparent;
-  border: 1px solid var(--header-text-color); /* Borde que contraste con el texto */
-  color: var(--header-text-color); /* Color del texto del botón */
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
+  background-color: transparent; /* Fondo transparente */
+  border: 1px solid var(--header-text-color); /* Borde que contraste con el texto del header */
+  color: var(--header-text-color); /* Color del icono/texto del botón */
+  padding: 0.5rem; /* Ajusta el padding para los iconos */
+  border-radius: 50%; /* Para hacerlo redondo si es un icono */
   cursor: pointer;
+  display: flex; /* Para centrar el icono */
+  align-items: center;
+  justify-content: center;
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .themeToggle:hover {
-  background-color: rgba(0, 0, 0, 0.1); /* Ligero fondo al pasar el ratón */
+  background-color: rgba(255, 255, 255, 0.1); /* Ligero fondo al pasar el ratón */
+  color: var(--primary-color); /* O un color de acento al pasar el ratón */
 }

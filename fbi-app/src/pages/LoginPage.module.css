@@ -1,0 +1,87 @@
+/*
+  Este CSS utiliza las variables CSS definidas en src/index.css (o src/App.css).
+  Asegúrate de que tus variables como --background-color, --text-color, etc.,
+  estén correctamente definidas en tu archivo CSS global para el tema claro y oscuro.
+*/
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Calcula la altura mínima para que el contenido ocupe el espacio restante,
+     considerando la altura del header y footer si los tienes definidos como variables. */
+  min-height: calc(100vh - var(--header-height, 80px) - var(--footer-height, 60px));
+  padding: 20px;
+  
+  /* Usando variables CSS del tema para el fondo y el color de texto del contenedor */
+  background-color: var(--background-color); 
+  color: var(--text-color); 
+}
+
+.title {
+  margin-bottom: 20px;
+  color: var(--primary-color); /* Usando la variable del tema para el color del título */
+}
+
+.form {
+  background-color: var(--card-background-color); /* Usando la variable del tema para el fondo del formulario */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra fija, no depende del tema */
+  width: 100%;
+  max-width: 400px;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--text-color); /* Usando la variable del tema para el color de las etiquetas */
+}
+
+.input {
+  width: calc(100% - 20px); /* Ajustar el ancho considerando el padding */
+  padding: 10px;
+  border: 1px solid var(--border-color); /* Usando la variable del tema para el borde */
+  border-radius: 4px;
+  background-color: var(--input-background); /* Usando la variable del tema para el fondo del input */
+  color: var(--text-color); /* Usando la variable del tema para el color del texto del input */
+}
+
+.button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--button-background); /* Usando la variable del tema para el fondo del botón */
+  color: white; /* Color del texto del botón (generalmente blanco/negro fijo para contraste) */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease; /* Transición para el efecto hover */
+}
+
+.button:hover:not(:disabled) {
+  background-color: var(--button-hover-background); /* Usando la variable del tema para el hover del botón */
+}
+
+.button:disabled {
+  background-color: #ccc; /* Color para botones deshabilitados (fijo) */
+  cursor: not-allowed;
+}
+
+.toggleText {
+  margin-top: 20px;
+  color: var(--text-color); /* Usando la variable del tema */
+}
+
+.toggleLink {
+  color: var(--primary-color); /* Usando la variable del tema */
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: 5px;
+}

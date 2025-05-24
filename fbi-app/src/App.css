@@ -1,50 +1,77 @@
 /* src/App.css */
 
-/* Variables para el Tema Claro (por defecto) */
+/* ------------------------------------------------------------- */
+/* Definición de variables CSS para el TEMA CLARO (por defecto) */
+/* Estas variables se usarán cuando el body no tenga la clase 'dark' */
+/* ------------------------------------------------------------- */
 :root {
   --background-color: #f0f2f5;
   --text-color: #333;
-  --header-background: #f0f0f0; /* Color original del header */
-  --header-text-color: #333; /* Color original del texto del header */
-  --navbar-background: #333; /* Color original de la navbar */
-  --navbar-text-color: white; /* Color original del texto de la navbar */
-  --navbar-hover-color: #ddd; /* Color original del hover de la navbar */
-  --card-background: #fff;
-  --card-border: #ccc;
-  --card-text-color: #555; /* Color de texto de los detalles de la tarjeta */
-  --link-color: #007bff; /* Si tienes enlaces en el contenido principal que quieres tematizar */
-  --footer-background: #343a40; /* Un color de footer genérico si lo tienes */
-  --footer-text-color: #fff;
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --card-background-color: #fff;
+  --border-color: #ddd;
+  --input-background: #fff;
+  --button-background: #007bff;
+  --button-hover-background: #0056b3;
+  
+  --navbar-background: #333; /* Fondo de la barra de navegación */
+  --navbar-text-color: white; /* Color de texto de la barra de navegación */
+  --navbar-hover-color: #ddd; /* Color al pasar el ratón por los enlaces de la navbar */
+
+  --header-background: #333; /* Fondo de la cabecera */
+  --header-text-color: #f0f0f0; /* Color del texto de la cabecera */
+
+  --footer-background: #343a40; /* Fondo del pie de página */
+  --footer-text-color: #fff; /* Color de texto del pie de página */
+
+  /* Puedes añadir más variables para otros elementos que necesiten cambiar de tema */
+  --header-height: 80px; /* Ejemplo de altura de cabecera, útil para cálculos de min-height */
+  --footer-height: 60px; /* Ejemplo de altura de pie de página */
 }
 
-/* Variables para el Tema Oscuro */
-body.dark-mode {
+/* ------------------------------------------------------------------ */
+/* Definición de variables CSS para el TEMA OSCURO                   */
+/* Estas variables se aplicarán cuando el elemento HTML (o body, o div.App) tenga la clase 'dark' */
+/* ------------------------------------------------------------------ */
+.dark { /* O body.dark-mode si usas esa clase en ThemeContext.js */
   --background-color: #282c34; /* Fondo oscuro */
-  --text-color: #f0f0f0; /* Texto claro */
-  --header-background: #1a1a1a; /* Header más oscuro */
-  --header-text-color: #e0e0e0; /* Texto del header más claro */
+  --text-color: #e0e0e0; /* Texto claro */
+  --primary-color: #90caf9; /* Un azul más claro para el modo oscuro */
+  --secondary-color: #a0a0a0;
+  --card-background-color: #333; /* Fondo de tarjeta oscuro */
+  --border-color: #555; /* Borde de tarjeta oscuro */
+  --input-background: #3a3a5a; /* Fondo de input oscuro */
+  --button-background: #90caf9;
+  --button-hover-background: #64b5f6;
+
   --navbar-background: #1e1e1e; /* Navbar más oscura */
   --navbar-text-color: #b0b0b0; /* Texto de la navbar más claro */
   --navbar-hover-color: #888; /* Hover de la navbar en oscuro */
-  --card-background: #333; /* Fondo de tarjeta oscuro */
-  --card-border: #555; /* Borde de tarjeta oscuro */
-  --card-text-color: #ccc; /* Texto de detalles de tarjeta claro */
-  --link-color: #90caf9; /* Enlaces en modo oscuro */
+
+  --header-background: #1a1a1a; /* Header más oscuro */
+  --header-text-color: #e0e0e0; /* Texto del header más claro */
+
   --footer-background: #121212;
   --footer-text-color: #e0e0e0;
 }
 
-/* Estilos globales que usarán las variables */
+/* -------------------------------------------------------------------------------- */
+/* Estilos globales y reseteos que usarán las variables (se aplican a toda la app) */
+/* -------------------------------------------------------------------------------- */
 body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave para el cambio de tema */
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Aplica los colores de fondo y texto del tema actual al body */
+  background-color: var(--background-color);
+  color: var(--text-color);
+  /* Agrega una transición suave para un efecto visual agradable al cambiar de tema */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 code {
@@ -52,13 +79,30 @@ code {
     monospace;
 }
 
+/* Estilos para el contenedor principal de la aplicación (div.App) */
 .App {
-  min-height: 100vh;
+  min-height: 100vh; /* Asegura que la aplicación ocupe al menos la altura completa de la ventana */
   display: flex;
   flex-direction: column;
+  /* Vuelve a aplicar los colores del tema al contenedor principal */
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.main-content {
-  flex-grow: 1;
-  padding: 20px;
+main {
+  flex-grow: 1; /* Permite que el contenido principal ocupe todo el espacio vertical disponible */
+  padding: 20px; /* Espaciado interno para el contenido principal */
 }
+
+/*
+  Asegúrate de que en los archivos .module.css de tus componentes
+  (NavBar.module.css, Header.module.css, Footer.module.css, Card.module.css, etc.)
+  uses las variables CSS definidas aquí.
+
+  Ejemplo en Header.module.css:
+  .header {
+    background-color: var(--header-background);
+    color: var(--header-text-color);
+  }
+*/

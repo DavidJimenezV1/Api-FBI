@@ -1,11 +1,14 @@
-/* Card.module.css */
+/* src/components/Card/Card.module.css */
 .card {
   position: relative;
-  border: 1px solid var(--card-border); /* USAR VARIABLE */
-  background-color: var(--card-background); /* AÑADIR BACKGROUND PARA TEMATIZAR */
-  padding: 10px;
+  border: 1px solid var(--card-border);       /* Usar variable del tema */
+  background-color: var(--card-background);   /* Usar variable del tema */
+  color: var(--card-text-color);             /* Usar variable del tema para el texto general */
+  padding: 15px;
   margin-bottom: 20px;
-  transition: background-color 0.3s ease, border-color 0.3s ease; /* Transición suave */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra fija, no depende del tema */
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease; /* Transición suave */
 }
 
 .favoriteButton {
@@ -16,7 +19,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  color: var(--text-color); /* Para que el icono del botón cambie de color con el tema */
+  color: var(--primary-color); /* Para que el icono del botón cambie de color con el tema */
   transition: color 0.3s ease;
 }
 
@@ -29,17 +32,18 @@
   max-height: 200px;
   object-fit: contain;
   border-radius: 8px;
+  margin-bottom: 10px;
 }
 
 .cardTitle {
   font-size: 1.2em;
-  margin-top: 10px;
+  margin-top: 0;
   margin-bottom: 5px;
-  color: var(--text-color); /* Para que el título cambie de color */
+  color: var(--text-color); /* Para que el título cambie de color con el tema */
 }
 
 .cardDetails {
   font-size: 0.9em;
-  color: var(--card-text-color); /* USAR VARIABLE */
+  color: var(--text-color); /* Para que los detalles cambien de color con el tema */
   margin-bottom: 10px;
 }

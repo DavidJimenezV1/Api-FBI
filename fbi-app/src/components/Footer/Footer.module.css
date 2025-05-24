@@ -1,0 +1,9 @@
+/* src/components/Footer/Footer.module.css */
+.footer {
+  background-color: var(--footer-background); /* Usar la variable del tema */
+  color: var(--footer-text-color);           /* Usar la variable del tema */
+  padding: 15px;
+  text-align: center;
+  margin-top: auto; /* Empuja el footer al final de la página si App tiene flex-direction: column */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}

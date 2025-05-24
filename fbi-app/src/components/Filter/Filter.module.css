@@ -8,12 +8,15 @@
 .filterLabel {
   display: flex;
   align-items: center;
+  color: var(--text-color); /* Usar variable del tema */
 }
 
 .filterSelect {
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--border-color); /* Usar variable del tema */
   border-radius: 5px;
   font-size: 1em;
   margin-left: 10px;
+  background-color: var(--input-background); /* Usar variable del tema */
+  color: var(--text-color); /* Usar variable del tema */
 }
